@@ -12,49 +12,6 @@ import json
 
 import requests
 
-""" offer_id = 'book#%s' % common.get_unique_id()
-product = {
-     'offerId':
-         offer_id,
-     'title':
-         'A Tale of Two Cities',
-     'description':
-         'A classic novel about the French Revolution',
-     'link':
-         'http://my-book-shop.com/tale-of-two-cities.html',
-     'imageLink':
-         'http://my-book-shop.com/tale-of-two-cities.jpg',
-     'contentLanguage':
-         'en',
-     'targetCountry':
-         'US',
-     'channel':
-         'online',
-     'availability':
-         'in stock',
-     'condition':
-         'new',
-     'googleProductCategory':
-         'Media > Books',
-     'gtin':
-         '9780007350896',
-     'price': {
-         'value': '2.50',
-         'currency': 'USD'
-     },
-     'shipping': [{
-         'country': 'US',
-         'service': 'Standard shipping',
-         'price': {
-             'value': '0.99',
-             'currency': 'USD'
-         }
-     }],
-     'shippingWeight': {
-         'value': '200',
-         'unit': 'grams'
-     }
-} """
 
 def get_all_product(api_client,api_secret,pim_token,pim_username,pim_pwd,pim_url):
     def get_pim_access_token():
@@ -137,16 +94,12 @@ def get_all_product(api_client,api_secret,pim_token,pim_username,pim_pwd,pim_url
                     'in stock',
                 'condition':
                     'new',
-                #'googleProductCategory':
-                #    'Media > Books',
                 'gtin':
                     ean,
                 'price': {
                     'value': p['regular_price'],
                     'currency': 'EUR'
                 },
-                #'salePrice' : sales_price,
-                #'salePriceEffectiveDate': sales_date,
                 'brand': brand
                 #'shipping': [{
                 #    'country': 'FR',
